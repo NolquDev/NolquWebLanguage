@@ -27,7 +27,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;b
 
 /* ── NAV ── */
 #topnav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 1.4rem;background:rgba(8,11,15,.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-.logo{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--accent);letter-spacing:.08em;cursor:pointer;user-select:none;display:flex;align-items:center;gap:.3rem;}
+.logo{font-family:'Syne',sans-serif;font-weight:750;font-size:1.1rem;color:var(--accent);letter-spacing:.08em;cursor:pointer;user-select:none;display:flex;align-items:center;gap:.3rem;}
 .logo em{color:var(--muted2);font-style:normal;font-weight:400;font-size:.8em;}
 .nav-links{display:flex;align-items:center;}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:11.5px;letter-spacing:.06em;padding:0 .9rem;height:var(--nav-h);display:flex;align-items:center;border-bottom:2px solid transparent;transition:color .18s,border-color .18s;cursor:pointer;user-select:none;}
@@ -76,7 +76,7 @@ section.active{display:block;}
 .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulseAnim 2s ease-in-out infinite;flex-shrink:0;}
 .hero-ascii{font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.7vw,13px);color:var(--accent);line-height:1.25;white-space:pre;margin:0 auto 1.5rem;opacity:0;animation:fadeUp .5s .1s ease both;text-shadow:0 0 40px rgba(0,212,170,.3);display:inline-block;}
 .hero-logo-text{display:none;}
-.hero-title{font-family:'Syne',sans-serif;font-size:clamp(1.85rem,5vw,4rem);font-weight:700;line-height:1.15;letter-spacing:-.01em;margin-bottom:.9rem;opacity:0;animation:fadeUp .5s .18s ease both;}
+.hero-title{font-family:'Syne',sans-serif;font-size:clamp(1.85rem,5vw,4rem);font-weight:750;line-height:1.15;letter-spacing:-.01em;margin-bottom:.9rem;opacity:0;animation:fadeUp .5s .18s ease both;}
 .hero-title .hl{color:var(--accent);}
 .hero-title .hl2{color:var(--accent2);}
 .hero-sub{max-width:540px;margin:0 auto 2rem;color:var(--muted2);font-size:13px;line-height:1.85;opacity:0;animation:fadeUp .5s .26s ease both;}
@@ -96,7 +96,7 @@ section.active{display:block;}
 .plat-card svg{width:26px;height:26px;}
 .plat-card .pn{font-weight:600;font-size:12px;}
 .plat-card .ps{font-size:10px;color:var(--muted);}
-.curr-badge{font-size:9px;background:var(--accent);color:#000;padding:1px 6px;border-radius:100px;font-weight:700;letter-spacing:.06em;}
+.curr-badge{font-size:9px;background:var(--accent);color:#000;padding:1px 6px;border-radius:100px;font-weight:750;letter-spacing:.06em;}
 
 /* Code demo */
 .demo-wrap{max-width:960px;margin:0 auto;padding:0 1.4rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;opacity:0;animation:fadeUp .5s .5s ease both;}
@@ -105,14 +105,14 @@ section.active{display:block;}
 /* Features */
 .home-sec{max-width:1100px;margin:0 auto;padding:2.5rem 1.4rem;}
 .eyebrow{font-size:10.5px;letter-spacing:.16em;color:var(--accent);text-transform:uppercase;margin-bottom:.35rem;}
-.sec-title{font-family:'Syne',sans-serif;font-size:clamp(1.4rem,3.5vw,2.1rem);font-weight:700;margin-bottom:2.2rem;}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(1.4rem,3.5vw,2.1rem);font-weight:750;margin-bottom:2.2rem;}
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
 .feat-cell{background:var(--surf);padding:1.4rem;transition:background .2s;position:relative;overflow:hidden;}
 .feat-cell:hover{background:var(--surf2);}
 .feat-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .2s;}
 .feat-cell:hover::before{opacity:1;}
 .feat-ico{font-size:1.2rem;margin-bottom:.8rem;display:block;}
-.feat-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:.35rem;}
+.feat-name{font-family:'Syne',sans-serif;font-weight:750;font-size:.88rem;color:var(--text);margin-bottom:.35rem;}
 .feat-desc{font-size:12px;color:var(--muted2);line-height:1.75;}
 
 /* ── CODE CARD ── */
@@ -131,7 +131,7 @@ section.active{display:block;}
 
 /* ── INSTALL ── */
 .install-page{max-width:900px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
-.install-page h1{font-family:'Syne',sans-serif;font-weight:700;font-size:1.9rem;margin-bottom:.35rem;}
+.install-page h1{font-family:'Syne',sans-serif;font-weight:750;font-size:1.9rem;margin-bottom:.35rem;}
 .pg-sub{color:var(--muted2);font-size:13px;margin-bottom:2rem;}
 
 .plat-sel{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-bottom:2rem;}
@@ -139,7 +139,7 @@ section.active{display:block;}
 .ps-btn:hover{border-color:var(--border2);color:var(--text);}
 .ps-btn.sel{border-color:var(--accent);background:rgba(0,212,170,.06);color:var(--accent);}
 .ps-btn svg{width:28px;height:28px;}
-.ps-btn .pn{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;}
+.ps-btn .pn{font-family:'Syne',sans-serif;font-weight:750;font-size:13px;}
 .ps-btn .ps{font-size:10px;color:var(--muted);}
 .ps-btn.sel .pn{color:var(--accent);}
 .plat-panel{display:none;}.plat-panel.active{display:block;}
@@ -165,8 +165,8 @@ section.active{display:block;}
 
 .steps{display:flex;flex-direction:column;gap:1.1rem;margin-bottom:1.4rem;}
 .step{display:grid;grid-template-columns:30px 1fr;gap:.75rem;align-items:start;}
-.step-num{width:30px;height:30px;border-radius:50%;border:1px solid var(--border2);background:var(--surf2);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--accent);flex-shrink:0;}
-.step-body h4{font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;margin-bottom:.25rem;}
+.step-num{width:30px;height:30px;border-radius:50%;border:1px solid var(--border2);background:var(--surf2);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:750;font-size:13px;color:var(--accent);flex-shrink:0;}
+.step-body h4{font-family:'Syne',sans-serif;font-weight:750;font-size:.88rem;margin-bottom:.25rem;}
 .step-body p{font-size:12px;color:var(--muted2);line-height:1.7;margin-bottom:.5rem;}
 .ic{background:var(--surf2);border:1px solid var(--border);padding:1px 5px;border-radius:3px;font-size:12px;color:var(--accent);}
 .callout{border:1px solid var(--border);border-left:3px solid var(--accent);background:rgba(0,212,170,.04);padding:.85rem 1rem;border-radius:4px;font-size:12px;color:var(--muted2);line-height:1.8;margin:1rem 0;}
@@ -186,10 +186,10 @@ section.active{display:block;}
 .ds-link:hover{color:var(--text);}
 .ds-link.active{color:var(--accent);border-left-color:var(--accent);}
 #doc-sidebar-toggle{display:none;width:100%;padding:.65rem 1rem;background:var(--surf);border:1px solid var(--border);border-radius:var(--r);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer;text-align:left;justify-content:space-between;align-items:center;margin-bottom:1.1rem;}
-.doc-main h1{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:700;margin-bottom:.8rem;border-bottom:1px solid var(--border);padding-bottom:.9rem;}
-.doc-main h2{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin:2.5rem 0 .8rem;display:flex;align-items:center;gap:.45rem;}
+.doc-main h1{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:750;margin-bottom:.8rem;border-bottom:1px solid var(--border);padding-bottom:.9rem;}
+.doc-main h2{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:750;margin:2.5rem 0 .8rem;display:flex;align-items:center;gap:.45rem;}
 .doc-main h2::before{content:'§';color:var(--accent);font-size:.8em;}
-.doc-main h3{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;color:var(--accent);margin:1.6rem 0 .65rem;}
+.doc-main h3{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:750;color:var(--accent);margin:1.6rem 0 .65rem;}
 .doc-main p{color:var(--muted2);font-size:13px;line-height:1.85;margin-bottom:.85rem;}
 .doc-main ul{margin:.4rem 0 1rem 1.4rem;color:var(--muted2);font-size:13px;line-height:2;}
 .doc-main .code-block{background:#04070a;border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1.1rem;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:.9rem 0 1.3rem;}
@@ -201,7 +201,7 @@ td:first-child{color:var(--text);}tr:last-child td{border-bottom:none;}tr:hover 
 
 /* ── EXAMPLES ── */
 .examples-page{max-width:900px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
-.examples-page h1{font-family:'Syne',sans-serif;font-weight:700;font-size:1.9rem;margin-bottom:.35rem;}
+.examples-page h1{font-family:'Syne',sans-serif;font-weight:750;font-size:1.9rem;margin-bottom:.35rem;}
 .pg-sub{color:var(--muted2);font-size:13px;margin-bottom:1.8rem;}
 .ex-filter{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.4rem;}
 .ex-tag-btn{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;padding:4px 11px;border-radius:100px;cursor:pointer;border:1px solid var(--border);color:var(--muted2);background:none;transition:all .15s;}
@@ -211,20 +211,20 @@ td:first-child{color:var(--text);}tr:last-child td{border-bottom:none;}tr:hover 
 .ex-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .2s;}
 .ex-card:hover{border-color:var(--border2);}
 .ex-header{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.1rem;background:var(--surf2);border-bottom:1px solid var(--border);flex-wrap:wrap;gap:.4rem;}
-.ex-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;}
+.ex-title{font-family:'Syne',sans-serif;font-weight:750;font-size:.88rem;}
 .ex-chip{font-size:10px;letter-spacing:.08em;color:var(--accent);background:rgba(0,212,170,.1);border:1px solid rgba(0,212,170,.2);padding:2px 8px;border-radius:100px;}
 
 /* ── ABOUT ── */
 .about-page{max-width:780px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
-.about-page h1{font-family:'Syne',sans-serif;font-weight:700;font-size:1.9rem;margin-bottom:.35rem;}
+.about-page h1{font-family:'Syne',sans-serif;font-weight:750;font-size:1.9rem;margin-bottom:.35rem;}
 .about-page .lead{color:var(--muted2);font-size:13px;line-height:1.9;margin-bottom:2.2rem;padding-bottom:1.4rem;border-bottom:1px solid var(--border);}
 .about-page .lead a{color:var(--accent);text-decoration:none;}
 .stats-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:2.2rem;}
 .stat-cell{background:var(--surf);padding:1.2rem;text-align:center;}
-.stat-n{font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:700;color:var(--accent);display:block;}
+.stat-n{font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:750;color:var(--accent);display:block;}
 .stat-l{font-size:10px;color:var(--muted);margin-top:.2rem;letter-spacing:.06em;}
 .ab-sec{margin-bottom:1.8rem;}
-.ab-sec h2{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.65rem;display:flex;align-items:center;gap:.45rem;}
+.ab-sec h2{font-family:'Syne',sans-serif;font-weight:750;font-size:1rem;margin-bottom:.65rem;display:flex;align-items:center;gap:.45rem;}
 .ab-sec h2::before{content:'//';color:var(--accent);font-size:.85em;}
 .ab-sec p{font-size:13px;color:var(--muted2);line-height:1.9;}
 .ab-sec a{color:var(--accent);text-decoration:none;}
@@ -309,7 +309,7 @@ footer a{color:var(--accent);text-decoration:none;}
     <div class="hero-glow2"></div>
     <div class="hero-badge"><span class="pulse"></span>v1.0.0 &nbsp;·&nbsp; MIT &nbsp;·&nbsp; C11 + C++17</div>
 
-    <div id="hero-logo" style="font-family:'Syne',sans-serif;font-weight:700;letter-spacing:.05em;color:var(--accent);opacity:0;animation:fadeUp .5s .1s ease both;margin-bottom:.5rem;text-shadow:0 0 80px rgba(0,212,170,.45),0 0 160px rgba(0,212,170,.2);line-height:1;width:100%;text-align:center;white-space:nowrap;overflow:hidden;padding:0 1rem;box-sizing:border-box;">NOLQU</div>
+    <div id="hero-logo" style="font-family:'Syne',sans-serif;font-weight:750;letter-spacing:.05em;color:var(--accent);opacity:0;animation:fadeUp .5s .1s ease both;margin-bottom:.5rem;text-shadow:0 0 80px rgba(0,212,170,.45),0 0 160px rgba(0,212,170,.2);line-height:1;width:100%;text-align:center;white-space:nowrap;overflow:hidden;padding:0 1rem;box-sizing:border-box;">NOLQU</div>
     <div style="font-family:'IBM Plex Mono',monospace;font-size:clamp(.65rem,1.5vw,.85rem);letter-spacing:.35em;color:var(--muted2);opacity:0;animation:fadeUp .5s .15s ease both;margin-bottom:2rem;text-transform:uppercase;">scripting language</div>
     <h1 class="hero-title">A <span class="hl">small, fast</span> scripting language<br>with its own <span class="hl2">bytecode VM</span>.</h1>
     <p class="hero-sub">A scripting language that gets out of your way.<br>Runs natively on Android, Linux, macOS, and Windows.</p>
@@ -498,14 +498,14 @@ footer a{color:var(--accent);text-decoration:none;}
 
     <!-- Quick test -->
     <div style="margin-top:2.2rem;">
-      <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:var(--accent);margin-bottom:.7rem;">// Verify your install</h3>
+      <h3 style="font-family:'Syne',sans-serif;font-weight:750;font-size:.95rem;color:var(--accent);margin-bottom:.7rem;">// Verify your install</h3>
       <div class="term"><div class="term-head"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><button class="term-copy-btn" onclick="cpTerm(this)">copy</button></div>
       <div class="term-body"><span class="tl" data-cmd>echo 'print "Hello, Nolqu!"' > test.nq && nq test.nq</span><span class="to">Hello, Nolqu!</span><span class="tl" data-cmd>nq repl</span><span class="to">  Nolqu 1.0.0  Interactive REPL</span><span class="to">  'help' for help  'exit' to quit</span><span class="to">nq > _</span></div></div>
     </div>
 
     <!-- Build targets table -->
     <div style="margin-top:1.8rem;">
-      <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:var(--accent);margin-bottom:.7rem;">// Build targets</h3>
+      <h3 style="font-family:'Syne',sans-serif;font-weight:750;font-size:.95rem;color:var(--accent);margin-bottom:.7rem;">// Build targets</h3>
       <div class="tbl-wrap"><table>
         <thead><tr><th>Command</th><th>Output</th><th>Notes</th></tr></thead>
         <tbody>
