@@ -74,8 +74,8 @@ section.active{display:block;}
 
 .hero-badge{display:inline-flex;align-items:center;gap:.45rem;background:rgba(0,212,170,.07);border:1px solid rgba(0,212,170,.2);color:var(--accent);font-size:11px;letter-spacing:.1em;padding:4px 13px;border-radius:100px;margin-bottom:1.5rem;animation:fadeUp .5s ease both;}
 .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulseAnim 2s ease-in-out infinite;flex-shrink:0;}
-.hero-ascii{display:none;}
-.hero-logo-text{display:block;font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(3rem,10vw,5.5rem);color:var(--accent);letter-spacing:.08em;text-shadow:0 0 40px rgba(0,212,170,.35);margin-bottom:1.5rem;opacity:0;animation:fadeUp .5s .1s ease both;}
+.hero-ascii{font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.7vw,13px);color:var(--accent);line-height:1.25;white-space:pre;margin:0 auto 1.5rem;opacity:0;animation:fadeUp .5s .1s ease both;text-shadow:0 0 40px rgba(0,212,170,.3);display:inline-block;}
+.hero-logo-text{display:none;}
 .hero-title{font-family:'Syne',sans-serif;font-size:clamp(1.85rem,5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin-bottom:.9rem;opacity:0;animation:fadeUp .5s .18s ease both;}
 .hero-title .hl{color:var(--accent);}
 .hero-title .hl2{color:var(--accent2);}
@@ -135,9 +135,9 @@ section.active{display:block;}
 .pg-sub{color:var(--muted2);font-size:13px;margin-bottom:2rem;}
 
 .plat-sel{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-bottom:2rem;}
-.ps-btn{display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .7rem;background:var(--surf);border:2px solid var(--border);border-radius:var(--r);cursor:pointer;transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent;}
-.ps-btn:hover{border-color:var(--border2);}
-.ps-btn.sel{border-color:var(--accent);background:rgba(0,212,170,.06);}
+.ps-btn{display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .7rem;background:var(--surf);border:2px solid var(--border);border-radius:var(--r);cursor:pointer;transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent;color:var(--muted2);}
+.ps-btn:hover{border-color:var(--border2);color:var(--text);}
+.ps-btn.sel{border-color:var(--accent);background:rgba(0,212,170,.06);color:var(--accent);}
 .ps-btn svg{width:28px;height:28px;}
 .ps-btn .pn{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;}
 .ps-btn .ps{font-size:10px;color:var(--muted);}
@@ -247,8 +247,8 @@ footer a{color:var(--accent);text-decoration:none;}
   #botnav{display:flex;}
   section{padding-bottom:calc(var(--bot-h) + var(--safe-b) + .5rem);}
   .hero{padding:3rem 1.2rem 2.2rem;}
-  .hero-ascii{display:none;}
-  .hero-logo-text{display:block;}
+  .hero-ascii{font-size:clamp(6px,2.2vw,9px);}
+  .hero-logo-text{display:none;}
   .plat-sel{gap:.5rem;}
   .ps-btn{padding:.8rem .4rem;}
   .ps-btn svg{width:24px;height:24px;}
@@ -308,14 +308,11 @@ footer a{color:var(--accent);text-decoration:none;}
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
     <div class="hero-badge"><span class="pulse"></span>v1.0.0 &nbsp;·&nbsp; MIT &nbsp;·&nbsp; C11 + C++17</div>
-    <pre class="hero-ascii">  _   _       _
- | \ | | ___ | | __ _ _   _
- |  \| |/ _ \| |/ _` | | | |
- | |\  | (_) | | (_| | |_| |
- |_| \_|\___/|_|\__,_|\__,_|</pre>
-    <div class="hero-logo-text">NOLQU</div>
+
+    <div style="font-family:'Syne',sans-serif;font-size:clamp(5rem,20vw,14rem);font-weight:800;letter-spacing:.15em;color:var(--accent);opacity:0;animation:fadeUp .5s .1s ease both;margin-bottom:.5rem;text-shadow:0 0 80px rgba(0,212,170,.45),0 0 160px rgba(0,212,170,.2);line-height:1;">NOLQU</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:clamp(.65rem,1.5vw,.85rem);letter-spacing:.35em;color:var(--muted2);opacity:0;animation:fadeUp .5s .15s ease both;margin-bottom:2rem;text-transform:uppercase;">scripting language</div>
     <h1 class="hero-title">A <span class="hl">small, fast</span> scripting language<br>with its own <span class="hl2">bytecode VM</span>.</h1>
-    <p class="hero-sub">No braces. No semicolons. Code that reads like plain sentences.<br>Runs natively on Android, Linux, macOS, and Windows.</p>
+    <p class="hero-sub">A scripting language that gets out of your way.<br>Runs natively on Android, Linux, macOS, and Windows.</p>
     <div class="hero-ctas">
       <button class="btn btn-primary" onclick="nav('install')">▸ Get Started</button>
       <button class="btn btn-secondary" onclick="nav('docs')">Read Docs →</button>
@@ -537,10 +534,11 @@ footer a{color:var(--accent);text-decoration:none;}
         <a class="ds-link" onclick="scrollD('d-syntax')">Syntax Basics</a>
         <a class="ds-link" onclick="scrollD('d-vars')">Variables</a>
         <a class="ds-link" onclick="scrollD('d-types')">Types</a>
+        <a class="ds-link" onclick="scrollD('d-operators')">Operators</a>
       </div>
       <div class="ds-grp"><span class="ds-label">Control Flow</span>
         <a class="ds-link" onclick="scrollD('d-if')">if / else</a>
-        <a class="ds-link" onclick="scrollD('d-loops')">loop / for</a>
+        <a class="ds-link" onclick="scrollD('d-loops')">loop</a>
         <a class="ds-link" onclick="scrollD('d-fns')">Functions</a>
       </div>
       <div class="ds-grp"><span class="ds-label">Data</span>
@@ -552,168 +550,319 @@ footer a{color:var(--accent);text-decoration:none;}
         <a class="ds-link" onclick="scrollD('d-modules')">Modules</a>
         <a class="ds-link" onclick="scrollD('d-fileio')">File I/O</a>
         <a class="ds-link" onclick="scrollD('d-builtins')">Built-in Functions</a>
+        <a class="ds-link" onclick="scrollD('d-stdlib')">Standard Library</a>
+        <a class="ds-link" onclick="scrollD('d-scoping')">Scoping Rules</a>
+        <a class="ds-link" onclick="scrollD('d-limitations')">Known Limitations</a>
       </div>
       <div class="ds-grp"><span class="ds-label">Reference</span>
         <a class="ds-link" onclick="scrollD('d-cli')">CLI Reference</a>
         <a class="ds-link" onclick="scrollD('d-vm')">VM Design</a>
         <a class="ds-link" onclick="scrollD('d-embed')">Embedding in C</a>
+        <a class="ds-link" onclick="scrollD('d-grammar')">Grammar (EBNF)</a>
       </div>
     </aside>
     <div class="doc-main">
       <h1 id="d-intro">Nolqu Language Reference</h1>
       <p>Nolqu is dynamically typed, with a hand-written lexer, recursive-descent parser, bytecode compiler, and stack-based VM. Runtime core in <span class="ic">C11</span>, tooling in <span class="ic">C++17</span>. Zero external dependencies.</p>
-      <div class="callout"><strong>Quick start:</strong> <span class="ic">nq help</span> lists all built-ins. <span class="ic">nq repl</span> starts interactive mode. <span class="ic">nq --ast file.nq</span> shows the AST.</div>
+      <div class="callout"><strong>Quick start:</strong> <span class="ic">nq help</span> lists all built-ins. <span class="ic">nq repl</span> starts interactive mode. <span class="ic">nq check file.nq</span> parses and compiles without running.</div>
 
       <h2 id="d-syntax">Syntax Basics</h2>
-      <p>Blocks opened by keywords, closed by <span class="ic">end</span>. No curly braces. No semicolons — newlines separate statements.</p>
-      <div class="code-block"><pre><span class="cmt">// Comment</span>
-<span class="kw">print</span> <span class="str">"Hello"</span>          <span class="cmt">// print to stdout</span>
-<span class="kw">print</span> <span class="num">10</span> <span class="op">+</span> <span class="num">5</span>           <span class="cmt">// 15</span>
-<span class="kw">print</span> <span class="str">"A"</span> <span class="op">..</span> <span class="str">"B"</span>     <span class="cmt">// "AB" (..) is string concat</span></pre></div>
+      <p>Blocks are opened by keywords and closed by <span class="ic">end</span>. No curly braces. Newlines are the statement terminator — no semicolons needed. Comments start with <span class="ic">#</span>.</p>
+      <div class="code-block"><pre><span class="cmt"># This is a comment</span>
+<span class="kw">print</span> <span class="str">"Hello"</span>          <span class="cmt"># Hello</span>
+<span class="kw">print</span> <span class="num">10</span> <span class="op">+</span> <span class="num">5</span>           <span class="cmt"># 15</span>
+<span class="kw">print</span> <span class="str">"A"</span> <span class="op">..</span> <span class="str">"B"</span>       <span class="cmt"># AB  (..) is string concat</span></pre></div>
 
       <h2 id="d-vars">Variables</h2>
-      <p>Declare with <span class="ic">let</span>. Dynamically typed. Reassign without <span class="ic">let</span>.</p>
-      <div class="code-block"><pre><span class="kw">let</span> x     <span class="op">=</span> <span class="num">42</span>
-<span class="kw">let</span> name  <span class="op">=</span> <span class="str">"Nolqu"</span>
+      <p>Declare with <span class="ic">let</span>. Dynamically typed. Reassign without <span class="ic">let</span>. Variables declared at the top level are global; inside a block they are local.</p>
+      <div class="code-block"><pre><span class="kw">let</span> name  <span class="op">=</span> <span class="str">"Alice"</span>
+<span class="kw">let</span> count <span class="op">=</span> <span class="num">0</span>
 <span class="kw">let</span> flag  <span class="op">=</span> <span class="kw">true</span>
-<span class="kw">let</span> empty <span class="op">=</span> <span class="kw">null</span>
-x <span class="op">=</span> x <span class="op">+</span> <span class="num">1</span>     <span class="cmt">// reassign — no let</span></pre></div>
+<span class="kw">let</span> empty <span class="op">=</span> <span class="kw">nil</span>
+count <span class="op">=</span> count <span class="op">+</span> <span class="num">1</span>   <span class="cmt"># reassign — no let</span></pre></div>
+      <p>Prefix a variable name with <span class="ic">_</span> to suppress unused-variable warnings: <span class="ic">let _ignored = some_call()</span></p>
 
       <h2 id="d-types">Types</h2>
       <div class="tbl-wrap"><table><thead><tr><th>Type</th><th>Literal</th><th>Notes</th></tr></thead><tbody>
-        <tr><td>number</td><td><code>42</code> <code>3.14</code></td><td>64-bit IEEE 754 float</td></tr>
-        <tr><td>string</td><td><code>"hi"</code></td><td>UTF-8, immutable. Concat with <code>..</code></td></tr>
-        <tr><td>bool</td><td><code>true</code> <code>false</code></td><td></td></tr>
-        <tr><td>null</td><td><code>null</code></td><td>Absence of value</td></tr>
-        <tr><td>array</td><td><code>[1,2,3]</code></td><td>Dynamic, zero-indexed, negative index supported</td></tr>
-        <tr><td>function</td><td><code>function(…)…end</code></td><td>First-class values</td></tr>
+        <tr><td>nil</td><td><code>nil</code></td><td>Absence of value</td></tr>
+        <tr><td>bool</td><td><code>true</code> <code>false</code></td><td>nil and false are falsy; everything else is truthy</td></tr>
+        <tr><td>number</td><td><code>42</code> <code>3.14</code> <code>1e6</code></td><td>Always 64-bit IEEE 754 float — no integer type</td></tr>
+        <tr><td>string</td><td><code>"hello"</code></td><td>Immutable, interned. Concat with <code>..</code></td></tr>
+        <tr><td>array</td><td><code>[1,"two",true]</code></td><td>Dynamic, heterogeneous, negative indexing supported</td></tr>
+        <tr><td>function</td><td><code>function f(x)…end</code></td><td>First-class values</td></tr>
+      </tbody></table></div>
+      <p>Type checking: <span class="ic">type(v)</span> returns the type name as a string. Predicates: <span class="ic">is_nil</span> <span class="ic">is_num</span> <span class="ic">is_str</span> <span class="ic">is_bool</span> <span class="ic">is_array</span>.</p>
+
+      <h2 id="d-operators">Operators</h2>
+      <p>Arithmetic: <span class="ic">+ - * / %</span>. Division and modulo by zero throw a catchable error. String concat: <span class="ic">..</span> (auto-converts numbers and booleans). Logical: <span class="ic">and or not</span> (also <span class="ic">!</span> as alias for not).</p>
+      <div class="tbl-wrap"><table><thead><tr><th>Level</th><th>Operators</th></tr></thead><tbody>
+        <tr><td>7 — unary</td><td><code>- not !</code></td></tr>
+        <tr><td>6 — multiply</td><td><code>* / %</code></td></tr>
+        <tr><td>5 — add</td><td><code>+ -</code></td></tr>
+        <tr><td>4 — concat</td><td><code>..</code></td></tr>
+        <tr><td>3 — compare</td><td><code>&lt; &gt; &lt;= &gt;=</code></td></tr>
+        <tr><td>2 — equality</td><td><code>== !=</code></td></tr>
+        <tr><td>1 — and</td><td><code>and</code></td></tr>
+        <tr><td>0 — or</td><td><code>or</code></td></tr>
       </tbody></table></div>
 
       <h2 id="d-if">if / else</h2>
-      <div class="code-block"><pre><span class="kw">if</span> x <span class="op">&gt;</span> <span class="num">10</span>
-  <span class="kw">print</span> <span class="str">"big"</span>
-<span class="kw">else if</span> x <span class="op">==</span> <span class="num">10</span>
-  <span class="kw">print</span> <span class="str">"ten"</span>
+      <div class="code-block"><pre><span class="kw">if</span> score <span class="op">&gt;=</span> <span class="num">90</span>
+  <span class="kw">print</span> <span class="str">"A"</span>
 <span class="kw">else</span>
-  <span class="kw">print</span> <span class="str">"small"</span>
+  <span class="kw">if</span> score <span class="op">&gt;=</span> <span class="num">75</span>
+    <span class="kw">print</span> <span class="str">"B"</span>
+  <span class="kw">else</span>
+    <span class="kw">print</span> <span class="str">"C"</span>
+  <span class="kw">end</span>
 <span class="kw">end</span></pre></div>
 
-      <h2 id="d-loops">loop / for</h2>
-      <div class="code-block"><pre><span class="cmt">// while-style</span>
-<span class="kw">let</span> i <span class="op">=</span> <span class="num">0</span>
-<span class="kw">loop</span> i <span class="op">&lt;</span> <span class="num">5</span>
+      <h2 id="d-loops">loop</h2>
+      <p><span class="ic">loop</span> is a while-style loop — runs as long as the condition is truthy. Note: there is no <span class="ic">break</span> or <span class="ic">continue</span> in v1.0.0.</p>
+      <div class="code-block"><pre><span class="kw">let</span> i <span class="op">=</span> <span class="num">1</span>
+<span class="kw">loop</span> i <span class="op">&lt;=</span> <span class="num">10</span>
+  <span class="kw">print</span> i
   i <span class="op">=</span> i <span class="op">+</span> <span class="num">1</span>
-<span class="kw">end</span>
-
-<span class="cmt">// for-in over array</span>
-<span class="kw">let</span> nums <span class="op">=</span> [<span class="num">10</span>, <span class="num">20</span>, <span class="num">30</span>]
-<span class="kw">for</span> n <span class="kw">in</span> nums
-  <span class="kw">print</span> n
 <span class="kw">end</span></pre></div>
 
       <h2 id="d-fns">Functions</h2>
+      <p>Functions are first-class values — store them in variables, pass as arguments. A function with no <span class="ic">return</span> returns <span class="ic">nil</span>. Note: closures are not supported in v1.0.0 — functions can only access globals and their own locals.</p>
       <div class="code-block"><pre><span class="kw">function</span> <span class="fn">add</span>(a, b)
   <span class="kw">return</span> a <span class="op">+</span> b
 <span class="kw">end</span>
+<span class="kw">print</span> <span class="fn">add</span>(<span class="num">3</span>, <span class="num">4</span>)   <span class="cmt"># 7</span>
 
-<span class="kw">print</span> <span class="fn">add</span>(<span class="num">3</span>, <span class="num">4</span>)   <span class="cmt">// 7</span>
-
-<span class="cmt">// First-class: assign to variable</span>
-<span class="kw">let</span> mul <span class="op">=</span> <span class="kw">function</span>(a, b)
-  <span class="kw">return</span> a <span class="op">*</span> b
+<span class="cmt"># Recursion</span>
+<span class="kw">function</span> <span class="fn">factorial</span>(n)
+  <span class="kw">if</span> n <span class="op">&lt;=</span> <span class="num">1</span>
+    <span class="kw">return</span> <span class="num">1</span>
+  <span class="kw">end</span>
+  <span class="kw">return</span> n <span class="op">*</span> <span class="fn">factorial</span>(n <span class="op">-</span> <span class="num">1</span>)
 <span class="kw">end</span></pre></div>
 
       <h2 id="d-arrays">Arrays</h2>
-      <div class="code-block"><pre><span class="kw">let</span> a <span class="op">=</span> [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>]
-<span class="fn">push</span>(a, <span class="num">4</span>)         <span class="cmt">// [1,2,3,4]</span>
-<span class="fn">pop</span>(a)              <span class="cmt">// removes last</span>
-<span class="kw">print</span> a[<span class="op">-</span><span class="num">1</span>]         <span class="cmt">// last element</span>
-<span class="kw">print</span> <span class="fn">len</span>(a)        <span class="cmt">// length</span>
-<span class="fn">sort</span>(a)             <span class="cmt">// in-place sort</span>
-<span class="kw">print</span> <span class="fn">join</span>(a, <span class="str">","</span>)  <span class="cmt">// "1,2,3"</span></pre></div>
+      <div class="code-block"><pre><span class="kw">let</span> fruits <span class="op">=</span> [<span class="str">"apple"</span>, <span class="str">"banana"</span>, <span class="str">"cherry"</span>]
+<span class="kw">print</span> fruits[<span class="num">0</span>]      <span class="cmt"># apple</span>
+<span class="kw">print</span> fruits[<span class="op">-</span><span class="num">1</span>]     <span class="cmt"># cherry (negative index)</span>
+
+<span class="fn">push</span>(a, <span class="num">4</span>)           <span class="cmt"># append</span>
+<span class="kw">let</span> v <span class="op">=</span> <span class="fn">pop</span>(a)       <span class="cmt"># remove last</span>
+<span class="fn">remove</span>(a, <span class="num">1</span>)         <span class="cmt"># remove by index</span>
+<span class="fn">sort</span>(nums)
+<span class="kw">print</span> <span class="fn">join</span>(nums, <span class="str">", "</span>)
+<span class="kw">print</span> <span class="fn">contains</span>(nums, <span class="num">3</span>)   <span class="cmt"># true/false</span>
+
+<span class="cmt"># Nested arrays</span>
+<span class="kw">let</span> matrix <span class="op">=</span> [[<span class="num">1</span>, <span class="num">2</span>], [<span class="num">3</span>, <span class="num">4</span>]]
+<span class="kw">print</span> matrix[<span class="num">1</span>][<span class="num">0</span>]   <span class="cmt"># 3</span></pre></div>
 
       <h2 id="d-strings">Strings</h2>
+      <p>Strings are immutable and UTF-8. All operations return new strings.</p>
       <div class="code-block"><pre><span class="kw">let</span> s <span class="op">=</span> <span class="str">"Hello, World"</span>
-<span class="kw">print</span> <span class="fn">len</span>(s)                  <span class="cmt">// 12</span>
-<span class="kw">print</span> <span class="fn">upper</span>(s)                <span class="cmt">// HELLO, WORLD</span>
-<span class="kw">print</span> <span class="fn">substr</span>(s, <span class="num">0</span>, <span class="num">5</span>)        <span class="cmt">// Hello</span>
-<span class="kw">print</span> <span class="fn">contains</span>(s, <span class="str">"World"</span>)   <span class="cmt">// true</span>
-<span class="kw">print</span> <span class="fn">replace</span>(s, <span class="str">"World"</span>, <span class="str">"Nolqu"</span>)
-<span class="kw">let</span> parts <span class="op">=</span> <span class="fn">split</span>(s, <span class="str">","</span>)     <span class="cmt">// array</span></pre></div>
+<span class="kw">print</span> <span class="fn">len</span>(s)                      <span class="cmt"># 12</span>
+<span class="kw">print</span> <span class="fn">upper</span>(s)                    <span class="cmt"># HELLO, WORLD</span>
+<span class="kw">print</span> <span class="fn">lower</span>(s)                    <span class="cmt"># hello, world</span>
+<span class="kw">print</span> <span class="fn">trim</span>(<span class="str">"  hi  "</span>)             <span class="cmt"># hi</span>
+<span class="kw">print</span> <span class="fn">slice</span>(s, <span class="num">0</span>, <span class="num">5</span>)             <span class="cmt"># Hello</span>
+<span class="kw">print</span> <span class="fn">replace</span>(s, <span class="str">"World"</span>, <span class="str">"Nolqu"</span>) <span class="cmt"># first only</span>
+<span class="kw">print</span> <span class="fn">index</span>(s, <span class="str">"World"</span>)          <span class="cmt"># 7</span>
+<span class="kw">print</span> <span class="fn">startswith</span>(s, <span class="str">"Hello"</span>)    <span class="cmt"># true</span>
+<span class="kw">let</span> parts <span class="op">=</span> <span class="fn">split</span>(s, <span class="str">","</span>)         <span class="cmt"># array</span></pre></div>
 
       <h2 id="d-errors">Error Handling</h2>
       <div class="code-block"><pre><span class="kw">try</span>
-  <span class="kw">let</span> n <span class="op">=</span> <span class="fn">to_number</span>(<span class="str">"abc"</span>)
-  <span class="kw">print</span> n
+  <span class="kw">let</span> result <span class="op">=</span> <span class="num">10</span> <span class="op">/</span> <span class="num">0</span>
 <span class="kw">catch</span> err
-  <span class="kw">print</span> <span class="str">"Caught: "</span> <span class="op">..</span> err
-<span class="kw">end</span></pre></div>
-
-      <h2 id="d-modules">Modules</h2>
-      <div class="code-block"><pre><span class="kw">import</span> <span class="str">"stdlib/math"</span>
-<span class="kw">import</span> <span class="str">"stdlib/string"</span>
-<span class="kw">import</span> <span class="str">"./mylib"</span>        <span class="cmt">// relative path</span>
-
-<span class="kw">print</span> <span class="fn">math.sqrt</span>(<span class="num">16</span>)    <span class="cmt">// 4</span>
-<span class="kw">print</span> <span class="fn">math.pow</span>(<span class="num">2</span>,<span class="num">8</span>)    <span class="cmt">// 256</span></pre></div>
-
-      <h2 id="d-fileio">File I/O</h2>
-      <div class="code-block"><pre><span class="kw">let</span> f <span class="op">=</span> <span class="fn">file_open</span>(<span class="str">"log.txt"</span>)
-<span class="kw">let</span> text <span class="op">=</span> <span class="fn">file_read</span>(f)
-<span class="fn">file_close</span>(f)
-
-<span class="kw">for</span> line <span class="kw">in</span> <span class="fn">file_lines</span>(<span class="str">"log.txt"</span>)
-  <span class="kw">print</span> line
+  <span class="kw">print</span> <span class="str">"Caught: "</span> <span class="op">..</span> err   <span class="cmt"># Division by zero.</span>
 <span class="kw">end</span>
 
-<span class="fn">file_write</span>(<span class="str">"out.txt"</span>, <span class="str">"hello\n"</span>)
-<span class="fn">file_append</span>(<span class="str">"out.txt"</span>, <span class="str">"world\n"</span>)</pre></div>
+<span class="cmt"># Throw your own errors</span>
+<span class="kw">function</span> <span class="fn">divide</span>(a, b)
+  <span class="kw">if</span> b <span class="op">==</span> <span class="num">0</span>
+    <span class="fn">error</span>(<span class="str">"second arg must not be zero"</span>)
+  <span class="kw">end</span>
+  <span class="kw">return</span> a <span class="op">/</span> b
+<span class="kw">end</span>
+
+<span class="cmt"># assert</span>
+<span class="fn">assert</span>(<span class="num">1</span> <span class="op">+</span> <span class="num">1</span> <span class="op">==</span> <span class="num">2</span>)
+<span class="fn">assert</span>(x <span class="op">&gt;</span> <span class="num">0</span>, <span class="str">"x must be positive"</span>)</pre></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Operation</th><th>Error message</th></tr></thead><tbody>
+        <tr><td><code>error(msg)</code></td><td>msg</td></tr>
+        <tr><td>Division / modulo by zero</td><td>"Division by zero."</td></tr>
+        <tr><td>Arithmetic on non-numbers</td><td>"This operation only works on numbers."</td></tr>
+        <tr><td>Array index out of bounds</td><td>"Array index N out of bounds (length M)."</td></tr>
+        <tr><td>Calling a non-function</td><td>"Only functions can be called, not &lt;type&gt;."</td></tr>
+        <tr><td><code>pop</code> on empty array</td><td>"pop: cannot pop from an empty array"</td></tr>
+      </tbody></table></div>
+
+      <h2 id="d-modules">Modules</h2>
+      <p>Path is relative to the working directory where <span class="ic">nq</span> is invoked. The <span class="ic">.nq</span> extension is added automatically. Importing executes the file in the global scope — all top-level declarations become globals.</p>
+      <div class="code-block"><pre><span class="kw">import</span> <span class="str">"stdlib/math"</span>    <span class="cmt"># clamp  lerp  sign</span>
+<span class="kw">import</span> <span class="str">"stdlib/array"</span>   <span class="cmt"># map  filter  reduce  reverse</span>
+<span class="kw">import</span> <span class="str">"stdlib/file"</span>    <span class="cmt"># read_or_default  write_lines  count_lines</span>
+<span class="kw">import</span> <span class="str">"my_module"</span>      <span class="cmt"># loads my_module.nq from working dir</span></pre></div>
+
+      <h2 id="d-fileio">File I/O</h2>
+      <div class="code-block"><pre><span class="cmt"># Write (creates or overwrites)</span>
+<span class="fn">file_write</span>(<span class="str">"notes.txt"</span>, <span class="str">"First line\nSecond line\n"</span>)
+
+<span class="cmt"># Append</span>
+<span class="fn">file_append</span>(<span class="str">"notes.txt"</span>, <span class="str">"Third line\n"</span>)
+
+<span class="cmt"># Check existence</span>
+<span class="kw">if</span> <span class="fn">file_exists</span>(<span class="str">"notes.txt"</span>)
+  <span class="kw">print</span> <span class="str">"exists"</span>
+<span class="kw">end</span>
+
+<span class="cmt"># Read entire file</span>
+<span class="kw">let</span> content <span class="op">=</span> <span class="fn">file_read</span>(<span class="str">"notes.txt"</span>)
+
+<span class="cmt"># Read as array of lines</span>
+<span class="kw">let</span> lines <span class="op">=</span> <span class="fn">file_lines</span>(<span class="str">"notes.txt"</span>)</pre></div>
 
       <h2 id="d-builtins">Built-in Functions</h2>
-      <div class="tbl-wrap"><table><thead><tr><th>Category</th><th>Functions</th></tr></thead><tbody>
-        <tr><td>Output</td><td><code>print</code>, <code>input</code></td></tr>
-        <tr><td>String</td><td><code>len</code>, <code>substr</code>, <code>split</code>, <code>trim</code>, <code>upper</code>, <code>lower</code>, <code>contains</code>, <code>replace</code>, <code>to_string</code></td></tr>
-        <tr><td>Number</td><td><code>to_number</code>, <code>floor</code>, <code>ceil</code>, <code>abs</code>, <code>sqrt</code>, <code>pow</code>, <code>min</code>, <code>max</code>, <code>round</code></td></tr>
-        <tr><td>Array</td><td><code>push</code>, <code>pop</code>, <code>len</code>, <code>slice</code>, <code>sort</code>, <code>reverse</code>, <code>join</code></td></tr>
-        <tr><td>File</td><td><code>file_open</code>, <code>file_read</code>, <code>file_write</code>, <code>file_append</code>, <code>file_lines</code>, <code>file_close</code></td></tr>
-        <tr><td>Random</td><td><code>random</code>, <code>rand_int</code>, <code>rand_float</code></td></tr>
-        <tr><td>Time</td><td><code>clock</code>, <code>time</code>, <code>sleep</code></td></tr>
-        <tr><td>Memory</td><td><code>gc_collect</code>, <code>gc_stats</code></td></tr>
-        <tr><td>Type</td><td><code>type_of</code>, <code>is_null</code>, <code>is_number</code>, <code>is_string</code>, <code>is_array</code></td></tr>
+      <div class="tbl-wrap"><table><thead><tr><th>Category</th><th>Function</th><th>Description</th></tr></thead><tbody>
+        <tr><td>I/O</td><td><code>input()</code> <code>input(prompt)</code></td><td>Read a line from stdin</td></tr>
+        <tr><td>Type</td><td><code>str(v)</code></td><td>Convert any value to string</td></tr>
+        <tr><td>Type</td><td><code>num(v)</code></td><td>Parse string to number; nil if invalid</td></tr>
+        <tr><td>Type</td><td><code>type(v)</code></td><td>Return type name as string</td></tr>
+        <tr><td>Type</td><td><code>is_nil is_num is_str is_bool is_array</code></td><td>Type predicates</td></tr>
+        <tr><td>Math</td><td><code>sqrt floor ceil round abs pow min max</code></td><td>Standard math ops</td></tr>
+        <tr><td>Math</td><td><code>random()</code></td><td>Float in [0.0, 1.0)</td></tr>
+        <tr><td>Math</td><td><code>rand_int(lo, hi)</code></td><td>Integer in [lo, hi] inclusive</td></tr>
+        <tr><td>String</td><td><code>len upper lower trim slice replace split join index repeat startswith endswith</code></td><td>String operations</td></tr>
+        <tr><td>Array</td><td><code>len push pop remove contains sort</code></td><td>Array operations</td></tr>
+        <tr><td>File</td><td><code>file_read file_write file_append file_exists file_lines</code></td><td>File I/O</td></tr>
+        <tr><td>Error</td><td><code>error(msg)</code> <code>assert(cond)</code> <code>assert(cond, msg)</code></td><td>Throw / assert</td></tr>
+        <tr><td>Memory</td><td><code>clock()</code> <code>mem_usage()</code> <code>gc_collect()</code></td><td>Time and memory</td></tr>
+      </tbody></table></div>
+
+      <h2 id="d-stdlib">Standard Library</h2>
+      <h3>stdlib/math</h3>
+      <div class="code-block"><pre><span class="kw">import</span> <span class="str">"stdlib/math"</span>
+
+<span class="kw">print</span> <span class="fn">clamp</span>(<span class="num">15</span>, <span class="num">0</span>, <span class="num">10</span>)      <span class="cmt"># 10</span>
+<span class="kw">print</span> <span class="fn">lerp</span>(<span class="num">0</span>, <span class="num">100</span>, <span class="num">0.5</span>)     <span class="cmt"># 50</span>
+<span class="kw">print</span> <span class="fn">sign</span>(<span class="op">-</span><span class="num">7</span>)               <span class="cmt"># -1</span></pre></div>
+      <h3>stdlib/array</h3>
+      <div class="code-block"><pre><span class="kw">import</span> <span class="str">"stdlib/array"</span>
+
+<span class="kw">function</span> <span class="fn">double</span>(x)
+  <span class="kw">return</span> x <span class="op">*</span> <span class="num">2</span>
+<span class="kw">end</span>
+<span class="kw">let</span> nums <span class="op">=</span> [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>]
+<span class="kw">print</span> <span class="fn">join</span>(<span class="fn">map</span>(nums, double), <span class="str">", "</span>)    <span class="cmt"># 2, 4, 6, 8, 10</span>
+
+<span class="kw">function</span> <span class="fn">is_even</span>(x)
+  <span class="kw">return</span> x <span class="op">%</span> <span class="num">2</span> <span class="op">==</span> <span class="num">0</span>
+<span class="kw">end</span>
+<span class="kw">print</span> <span class="fn">join</span>(<span class="fn">filter</span>(nums, is_even), <span class="str">", "</span>)  <span class="cmt"># 2, 4</span>
+
+<span class="kw">let</span> r <span class="op">=</span> <span class="fn">reverse</span>([<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>])          <span class="cmt"># [3,2,1] — original unchanged</span></pre></div>
+      <h3>stdlib/file</h3>
+      <div class="code-block"><pre><span class="kw">import</span> <span class="str">"stdlib/file"</span>
+
+<span class="kw">let</span> cfg <span class="op">=</span> <span class="fn">read_or_default</span>(<span class="str">"config.txt"</span>, <span class="str">""</span>)
+<span class="fn">write_lines</span>(<span class="str">"names.txt"</span>, [<span class="str">"Alice"</span>, <span class="str">"Bob"</span>])
+<span class="kw">print</span> <span class="fn">count_lines</span>(<span class="str">"names.txt"</span>)    <span class="cmt"># 2</span></pre></div>
+
+      <h2 id="d-scoping">Scoping Rules</h2>
+      <p><span class="ic">let</span> at top level → global. <span class="ic">let</span> inside a function → local to that function. <span class="ic">let</span> inside <span class="ic">if</span>, <span class="ic">loop</span>, <span class="ic">try</span>, or <span class="ic">catch</span> → local to that block. Local variables shadow outer ones with the same name.</p>
+      <div class="code-block"><pre><span class="kw">let</span> x <span class="op">=</span> <span class="str">"global"</span>
+
+<span class="kw">function</span> <span class="fn">test</span>()
+  <span class="kw">let</span> x <span class="op">=</span> <span class="str">"local"</span>   <span class="cmt"># shadows global x</span>
+  <span class="kw">print</span> x           <span class="cmt"># local</span>
+<span class="kw">end</span>
+
+<span class="fn">test</span>()
+<span class="kw">print</span> x             <span class="cmt"># global</span></pre></div>
+
+      <h2 id="d-limitations">Known Limitations (v1.0.0)</h2>
+      <div class="tbl-wrap"><table><thead><tr><th>Limitation</th><th>Notes</th></tr></thead><tbody>
+        <tr><td>No closures</td><td>Functions cannot capture variables from enclosing scopes</td></tr>
+        <tr><td>No <code>break</code> / <code>continue</code></td><td>Loop control requires condition variables</td></tr>
+        <tr><td>No hash maps</td><td>Only arrays and strings are built-in collections</td></tr>
+        <tr><td>No integer type</td><td>All numbers are 64-bit floats</td></tr>
+        <tr><td><code>import</code> re-executes</td><td>Importing a file twice runs it twice</td></tr>
+        <tr><td>No cycle detection</td><td>Circular imports will loop forever</td></tr>
+        <tr><td>No string mutation</td><td>All string operations return new strings</td></tr>
+        <tr><td><code>replace</code> first only</td><td>Replaces only the first occurrence, not all</td></tr>
       </tbody></table></div>
 
       <h2 id="d-cli">CLI Reference</h2>
       <div class="tbl-wrap"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
-        <tr><td><code>nq file.nq</code></td><td>Run a Nolqu file</td></tr>
-        <tr><td><code>nq run file.nq</code></td><td>Explicit run</td></tr>
-        <tr><td><code>nq check file.nq</code></td><td>Parse + compile only, no run</td></tr>
+        <tr><td><code>nq program.nq</code></td><td>Run a file</td></tr>
+        <tr><td><code>nq run program.nq</code></td><td>Same, explicit</td></tr>
+        <tr><td><code>nq check program.nq</code></td><td>Parse + compile only (no run)</td></tr>
         <tr><td><code>nq repl</code></td><td>Interactive REPL</td></tr>
-        <tr><td><code>nq disasm file.nq</code></td><td>Disassemble bytecode</td></tr>
-        <tr><td><code>nq --ast file.nq</code></td><td>Print the AST</td></tr>
-        <tr><td><code>nq version</code></td><td>Show version info</td></tr>
+        <tr><td><code>nq version</code></td><td>Show version</td></tr>
         <tr><td><code>nq help</code></td><td>List all built-in functions</td></tr>
+        <tr><td><code>nq --ast file.nq</code></td><td>Print the AST</td></tr>
       </tbody></table></div>
+      <p>REPL commands: <span class="ic">help</span> · <span class="ic">clear</span> · <span class="ic">exit</span> · <span class="ic">quit</span></p>
 
       <h2 id="d-vm">VM Design</h2>
-      <p>Source is compiled to a flat <span class="ic">Chunk</span> of bytecodes executed by a stack-based VM. Mark-and-sweep GC is triggered at allocation time.</p>
-      <ul>
-        <li>Stack-based evaluation — no register allocation needed</li>
-        <li>Constant pool per chunk for literals</li>
-        <li>Heap managed by arena allocator</li>
-        <li>18 native built-ins wired into the VM dispatch loop</li>
-        <li>Core modules: <span class="ic">memory</span>, <span class="ic">value</span>, <span class="ic">chunk</span>, <span class="ic">object</span>, <span class="ic">table</span>, <span class="ic">gc</span>, <span class="ic">vm</span></li>
-      </ul>
+      <p>Nolqu's pipeline: Lexer → Parser → Compiler → VM. The runtime core (<span class="ic">memory</span>, <span class="ic">value</span>, <span class="ic">chunk</span>, <span class="ic">object</span>, <span class="ic">table</span>, <span class="ic">gc</span>, <span class="ic">vm</span>) is C11. Tooling (<span class="ic">lexer</span>, <span class="ic">parser</span>, <span class="ic">compiler</span>, <span class="ic">repl</span>) is C++17.</p>
+      <div class="tbl-wrap"><table><thead><tr><th>Resource</th><th>Limit</th></tr></thead><tbody>
+        <tr><td>Operand stack</td><td>512 values</td></tr>
+        <tr><td>Call frames</td><td>64</td></tr>
+        <tr><td>try/catch nesting</td><td>64</td></tr>
+        <tr><td>Locals per function</td><td>256</td></tr>
+        <tr><td>Constants per chunk</td><td>256</td></tr>
+        <tr><td>Host-registered natives</td><td>64</td></tr>
+      </tbody></table></div>
+      <p>GC is mark-and-sweep, triggered automatically. Threshold starts at 1 MB and doubles after each collection. The VM also includes "Did You Mean?" suggestions for undefined variables using Levenshtein distance.</p>
 
       <h2 id="d-embed">Embedding in C / C++</h2>
-      <p>Include <span class="ic">nolqu.h</span> and link <span class="ic">libnolqu.a</span>.</p>
-      <div class="code-block"><pre><span class="kw">#include</span> <span class="str">"nolqu.h"</span>
+      <p>Include <span class="ic">nolqu.h</span> and link all <span class="ic">.c</span> and <span class="ic">.cpp</span> files from <span class="ic">src/</span> together with your application.</p>
+      <div class="code-block"><pre><span class="cmt">// Quick start</span>
+<span class="kw">#include</span> <span class="str">"nolqu.h"</span>
 
-<span class="kw">int</span> main() {
-  NolquVM *vm <span class="op">=</span> <span class="fn">nolqu_new</span>();
-  <span class="fn">nolqu_run_file</span>(vm, <span class="str">"script.nq"</span>);
-  <span class="fn">nolqu_free</span>(vm);
-  <span class="kw">return</span> <span class="num">0</span>;
-}</pre></div>
+NqState* nq <span class="op">=</span> <span class="fn">nq_open</span>();
+<span class="fn">nq_dofile</span>(nq, <span class="str">"script.nq"</span>);
+<span class="fn">nq_close</span>(nq);</pre></div>
+      <div class="code-block"><pre><span class="cmt">// Pass data in, read results out</span>
+<span class="fn">nq_setglobal_string</span>(nq, <span class="str">"player_name"</span>, <span class="str">"Alice"</span>);
+<span class="fn">nq_setglobal_number</span>(nq, <span class="str">"level"</span>, <span class="num">5</span>);
+<span class="fn">nq_dofile</span>(nq, <span class="str">"game.nq"</span>);
+NqValue score <span class="op">=</span> <span class="fn">nq_getglobal</span>(nq, <span class="str">"final_score"</span>);</pre></div>
+      <div class="code-block"><pre><span class="cmt">// Register a host function</span>
+NqValue <span class="fn">host_get_time</span>(NqState* nq, <span class="kw">int</span> argc, NqValue* argv) {
+  <span class="kw">return</span> <span class="fn">nq_number</span>((<span class="kw">double</span>)<span class="fn">time</span>(NULL));
+}
+<span class="fn">nq_register</span>(nq, <span class="str">"get_time"</span>, host_get_time, <span class="num">0</span>);</pre></div>
+      <p>API functions: <span class="ic">nq_open</span> <span class="ic">nq_close</span> <span class="ic">nq_dostring</span> <span class="ic">nq_dofile</span> <span class="ic">nq_setglobal_*</span> <span class="ic">nq_getglobal</span> <span class="ic">nq_register</span> <span class="ic">nq_gc</span> <span class="ic">nq_lasterror</span>. Up to 64 host functions per state. States are not thread-safe.</p>
+
+      <h2 id="d-grammar">Grammar (EBNF)</h2>
+      <p>Formal grammar specification for Nolqu v1.0.0.</p>
+      <div class="code-block"><pre><span class="cmt">program     → statement* EOF</span>
+
+<span class="cmt">statement   → let_stmt | assign_stmt | print_stmt</span>
+<span class="cmt">            | if_stmt | loop_stmt | function_decl</span>
+<span class="cmt">            | return_stmt | import_stmt | try_stmt | expr_stmt</span>
+
+<span class="cmt">let_stmt    → "let" IDENT "=" expr NEWLINE</span>
+<span class="cmt">if_stmt     → "if" expr NEWLINE statement*</span>
+<span class="cmt">              ( "else" NEWLINE statement* )? "end" NEWLINE</span>
+<span class="cmt">loop_stmt   → "loop" expr NEWLINE statement* "end" NEWLINE</span>
+<span class="cmt">try_stmt    → "try" NEWLINE statement*</span>
+<span class="cmt">              "catch" IDENT NEWLINE statement* "end" NEWLINE</span>
+
+<span class="cmt">expr        → or_expr</span>
+<span class="cmt">or_expr     → and_expr ( "or" and_expr )*</span>
+<span class="cmt">and_expr    → not_expr ( "and" not_expr )*</span>
+<span class="cmt">not_expr    → "not" not_expr | equality</span>
+<span class="cmt">equality    → comparison ( ( "==" | "!=" ) comparison )*</span>
+<span class="cmt">comparison  → concat ( ( "&lt;" | "&gt;" | "&lt;=" | "&gt;=" ) concat )*</span>
+<span class="cmt">concat      → add ( ".." add )*</span>
+<span class="cmt">add         → mult ( ( "+" | "-" ) mult )*</span>
+<span class="cmt">mult        → unary ( ( "*" | "/" | "%" ) unary )*</span>
+<span class="cmt">unary       → "-" unary | "!" unary | call</span>
+<span class="cmt">call        → primary ( "(" arg_list? ")" | "[" expr "]" )*</span>
+<span class="cmt">primary     → NUMBER | STRING | "true" | "false" | "nil"</span>
+<span class="cmt">            | IDENT | "(" expr ")" | "[" expr_list? "]"</span></pre></div>
     </div>
   </div>
 </section>
@@ -839,7 +988,7 @@ x <span class="op">=</span> x <span class="op">+</span> <span class="num">1</spa
       <div class="stat-cell"><span class="stat-n">MIT</span><div class="stat-l">License</div></div>
       <div class="stat-cell"><span class="stat-n">0</span><div class="stat-l">Dependencies</div></div>
     </div>
-    <div class="ab-sec"><h2>Philosophy</h2><p>Nolqu was designed around one principle: code should read like plain sentences. No braces, no semicolons, no boilerplate. The language favors clarity over cleverness — every feature earns its place by making code more readable, not just more powerful.</p></div>
+    <div class="ab-sec"><h2>Philosophy</h2><p>Nolqu was designed around one simple principle: code should read like plain sentences.</p><p>The language favors clarity over cleverness. Every feature exists to make programs easier to read and understand.</p></div>
     <div class="ab-sec"><h2>Architecture</h2><p>The entire pipeline is hand-written: a custom lexer tokenizes source, a recursive-descent parser builds an AST, and a bytecode compiler emits instructions for a stack-based VM. Mark-and-sweep GC with tunable thresholds. Zero external dependencies.</p></div>
     <div class="ab-sec"><h2>Platform Support</h2><p>Compiles and runs on Android (Termux + clang), Ubuntu/Debian/Arch Linux, macOS, and Windows (MinGW-w64 / MSYS2). Same <span class="ic">.nq</span> scripts run everywhere without modification.</p></div>
     <div class="ab-sec"><h2>License</h2>
