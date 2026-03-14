@@ -75,6 +75,7 @@ section.active{display:block;}
 .hero-badge{display:inline-flex;align-items:center;gap:.45rem;background:rgba(0,212,170,.07);border:1px solid rgba(0,212,170,.2);color:var(--accent);font-size:11px;letter-spacing:.1em;padding:4px 13px;border-radius:100px;margin-bottom:1.5rem;animation:fadeUp .5s ease both;}
 .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulseAnim 2s ease-in-out infinite;flex-shrink:0;}
 .hero-ascii{font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.7vw,13px);color:var(--accent);line-height:1.25;white-space:pre;margin:0 auto 1.5rem;opacity:0;animation:fadeUp .5s .1s ease both;text-shadow:0 0 40px rgba(0,212,170,.3);display:inline-block;}
+.hero-logo-text{display:none;font-family:'Syne',sans-serif;font-weight:800;font-size:3.5rem;color:var(--accent);letter-spacing:.06em;text-shadow:0 0 40px rgba(0,212,170,.35);margin-bottom:1.5rem;opacity:0;animation:fadeUp .5s .1s ease both;}
 .hero-title{font-family:'Syne',sans-serif;font-size:clamp(1.85rem,5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin-bottom:.9rem;opacity:0;animation:fadeUp .5s .18s ease both;}
 .hero-title .hl{color:var(--accent);}
 .hero-title .hl2{color:var(--accent2);}
@@ -246,7 +247,8 @@ footer a{color:var(--accent);text-decoration:none;}
   #botnav{display:flex;}
   section{padding-bottom:calc(var(--bot-h) + var(--safe-b) + .5rem);}
   .hero{padding:3rem 1.2rem 2.2rem;}
-  .hero-ascii{font-size:clamp(6px,2.2vw,9px);}
+  .hero-ascii{display:none;}
+  .hero-logo-text{display:block;}
   .plat-sel{gap:.5rem;}
   .ps-btn{padding:.8rem .4rem;}
   .ps-btn svg{width:24px;height:24px;}
@@ -311,6 +313,7 @@ footer a{color:var(--accent);text-decoration:none;}
  |  \| |/ _ \| |/ _` | | | |
  | |\  | (_) | | (_| | |_| |
  |_| \_|\___/|_|\__,_|\__,_|</pre>
+    <div class="hero-logo-text">NOLQU</div>
     <h1 class="hero-title">A <span class="hl">small, fast</span> scripting language<br>with its own <span class="hl2">bytecode VM</span>.</h1>
     <p class="hero-sub">No braces. No semicolons. Code that reads like plain sentences.<br>Runs natively on Android, Linux, macOS, and Windows.</p>
     <div class="hero-ctas">
